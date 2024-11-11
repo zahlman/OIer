@@ -18,7 +18,7 @@ with open("school.txt",encoding='utf-8') as src:
             continue
         cnt+=1
         try:
-            school_info.append({"id":eval("0x"+hashlib.md5(i.split(',')[2].encode("utf8")).hexdigest())%998244353,"name":[],"awards":{},"rating":0,"prov":i.split(',')[0],"city":i.split(',')[1]})
+            school_info.append({"id":int(hashlib.md5(i.split(',')[2].encode("utf8")).hexdigest(),16)%998244353,"name":[],"awards":{},"rating":0,"prov":i.split(',')[0],"city":i.split(',')[1]})
         except:
             print(i)
         for j in i.split(',')[2:]:
